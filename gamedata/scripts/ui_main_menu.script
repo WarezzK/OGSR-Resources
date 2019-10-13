@@ -197,6 +197,8 @@ function main_menu:OnKeyboard(dik, keyboard_action)
 		elseif dik == DIK_keys.DIK_S then --Тестовый спавн
 			xpcall( function() dofile(getFS():update_path("$game_scripts$", "test_spawn.lua")) end, log1)
 			self:close_and_delete_menu()
+		elseif dik == DIK_keys.DIK_F2 then --Warezz.K modded 05.05.2019 - 21:52 -- Added Cheat Menu (load game, press ESC and then press F2)
+			ui_cheat_main.start_menu(self)
 		elseif dik == DIK_keys.DIK_F3 then --Показать текущие координаты
 			if ogse.check_game() then
 				utils2.show_coordinates()
@@ -210,10 +212,6 @@ function main_menu:OnKeyboard(dik, keyboard_action)
 				else
 					_sdata.unsubscribe()
 				end
-			end
-		elseif dik == DIK_keys.DIK_F1 then
-			if ogse.check_game() and ogse.is_developer_mode() then
-				ui_cheat_main.start_menu(self)
 			end
 		end
 	end
