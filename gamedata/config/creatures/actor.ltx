@@ -17,39 +17,35 @@ destroyed_vis_name               = physics\Dead_Body\skelet_crash
 
 terrain                          = actor_terrain
 
-max_item_mass                    = 50.0
-jump_speed                       =8.000000
-crouch_coef                      = 0.45
-climb_coef                       = 0.7
-run_coef                         = 1.8 ;2.1
-sprint_koef                      = 2.2 ;2.6
-run_back_coef                    = 1.8
-walk_back_coef                   = 0.8
-air_control_param                = 0.1
-walk_accel                       = 17
+;;-- Warezz.K modded 05.05.2019 - 17:24 -- Modified
+max_item_mass = 60.0
+jump_speed = 7
+crouch_coef   = 0.45
+climb_coef = 0.4
+run_coef = 1.97
+sprint_koef   = 2.33
+run_back_coef = 1.6
+walk_back_coef = 0.5
+air_control_param     = 0.1
+walk_accel = 11.5
 
 ;радиус в котром над предметами выводятся их названия
-pickup_info_radius               = 5 ; 3
+pickup_info_radius               = 2
+;; -- Warezz.K END
 
 ef_creature_type                 = 17 ; option for evaluation functions
 
 ; attach params
 attachable_items                 = device_torch,device_torch_bad,attachable_item,hand_radio
 
+;;-- Warezz.K modded 05.05.2019 - 17:24 -- Modified
 ph_box0_center                   = 0.0,  0.9,  0.0
 ph_box0_size                     = 0.35, 0.9,  0.35
 ph_box1_center                   = 0.0,  0.65,  0.0
 ph_box1_size                     = 0.35, 0.65,  0.35
-ph_box2_center                   = 0.0,  0.55,  0.0
-ph_box2_size                     = 0.35, 0.55,  0.35
-
-;ph_box0_center                   = 0.0,  0.2,  0.0
-;ph_box0_size                     = 0.1, 0.2,  0.1
-;ph_box1_center                   = 0.0,  0.2,  0.0
-;ph_box1_size                     = 0.1, 0.2,  0.1
-;ph_box2_center                   = 0.0,  0.2,  0.0
-;ph_box2_size                     = 0.1, 0.2,  0.1
-
+ph_box2_center                   = 0.0,  0.45,  0.0
+ph_box2_size                     = 0.35, 0.45,  0.35
+;; -- Warezz.K END
 
 stalker_restrictor_radius        = 0.5;0.55;0.75;0.9
 stalker_small_restrictor_radius  = 0.45;
@@ -234,7 +230,7 @@ power_hit_part          = 0.1     ;процент хита, уходящий на отнимание силы
 ; лучше оставить этот параметр нулевым (т.е. предел сверху всегда будет единица), а все эффекты свести к снижению и восстановлению
 ; собственно энергии (power)
 max_power_leak_speed       = 0.0
-max_walk_weight            =110
+max_walk_weight            =70
 
 bleeding_v                 = 0.001    ;потеря крови при номинальной ране в секунду
 wound_incarnation_v        = 0.002    ;скорость заживления раны
