@@ -39,7 +39,9 @@
 		<text align="c" complex_mode="0" font="graffiti22" r="238" g="155" b="23" a="255">Ammo</text>
 	</static_ammo>
 	
-	<static_wpn_icon x="-5" y="13" width="41" height="42"/>
+	<!-- Warezz.K modded 06.05.2019 - 08:50 - Modified -->
+	<static_wpn_icon x="13" y="16" width="31" height="32"/>
+	<!-- Warezz.K END -->
 
 	<car_panel x="900" y="571" width="123" height="200"/>
 	

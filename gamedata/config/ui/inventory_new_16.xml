@@ -33,8 +33,10 @@
 		<texture>ui_slots_armory</texture>
 	</belt_slots>
 
-	<dragdrop_belt x="132" y="288" width="630" height="48"
-            cell_width = "45" cell_height="45" rows_num="1" cols_num="13" show_grid="1"/>
+	<!-- Warezz.K modded 01.05.2019 - 17:18 - Modified -->
+	<dragdrop_belt x="132" y="301" width="630" height="48" cell_width = "21" cell_height="21" rows_num="1" cols_num="28" show_grid="1"/>
+	<!-- Warezz.K END -->
+	
 	<dragdrop_detector x="72" y="310" width="37" height="37"
             cell_width = "37" cell_height="37" rows_num="1" cols_num="1"
             custom_placement="0"/>
@@ -84,17 +86,17 @@
 		<texture>ui_bottom_background</texture>
 	</bottom_static>
 
-    <dragdrop_bag x="17" y="153" width="646" height="350"   
-            cell_width = "30" cell_height="35" rows_num="10" cols_num="21" 
-            unlimited="1" group_similar="1" show_grid="1" condition_progress_bar="1"/>
+	<!-- Warezz.K modded 28.04.2019 - 17:18 - Modified -->
+    <dragdrop_bag x="17" y="153" width="646" height="350" cell_width = "23.6" cell_height="28" rows_num="50" cols_num="27" unlimited="1" group_similar="1" show_grid="1" condition_progress_bar="1"/>
 
     <bag_static x="20" y="238" width="859" height="762" complex_mode="1">		
-        <text x="30" y="127" font="graffiti22" r="231" g="153" b="22">ui_inv_bag</text>
+        <text x="30" y="127" font="letterica16" r="0" g="255" b="255">ui_inv_bag</text>
     </bag_static>
     
     <money_static x="545" y="360" width="108" height="33" stretch="1">
-		<text font="graffiti22" r="238" g="153" b="26" align="c" vert_align="c"></text>
+		<text font="letterica16" r="0" g="255" b="255" align="c" vert_align="c"></text>
     </money_static>
+	<!-- Warezz.K END -->
  
     <descr_static x="12" y="18" width="600" height="252">
         <text x="25" y="3" font="graffiti22" r="238" g="155" b="23">ui_inv_description</text>
