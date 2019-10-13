@@ -91,6 +91,46 @@ bleeding_v 				= 0.0 		;-- потеря крови при номинальной ране в секунду
 wound_incarnation_v 			= 0.01 		;-- крутизна кривой заживления (какой процент раны останется после заживления в игровую секунду)
 min_wound_size 				= 0.01
 
+;;-- Warezz.K modded 28.04.2019 - 20:37 -- Added
+[stalker_immortal]:stalker_trader
+$spawn = "stalkers\stalker_immortal"
+$npc = on
+immunities_sect = stalker_immunities_immortal
+condition_sect = stalker_condition_immortal
+
+[stalker_immunities_immortal]
+telepatic_immunity = 0.0
+burn_immunity = 0.0 
+strike_immunity = 0.0
+shock_immunity = 0.0
+wound_immunity = 0.0
+radiation_immunity = 0.0
+chemical_burn_immunity = 0.0
+explosion_immunity = 0.0
+fire_wound_immunity = 0.0
+wound_2_immunity = 0.0
+
+[stalker_condition_immortal]
+satiety_v = 0.00001
+radiation_v = 0.0001
+satiety_power_v = 0.0005
+satiety_health_v = 0.0 ;0.0001
+satiety_critical = 0.0
+radiation_health_v = 0.001
+morale_v = 0.0001
+health_hit_part = 0.0
+power_hit_part = 0.0
+psy_health_v = 0.01
+sleep_health = 1.0
+sleep_power = 1.0
+sleep_satiety = 1.0
+sleep_radiation = 1.0
+sleep_psy_health = 1.0
+bleeding_v = 0.0
+wound_incarnation_v = 0.001
+min_wound_size = 0.01
+;; -- Warezz.K END
+
 [stalker_undying]:stalker
 GroupControlSection			= spawn_group
 $spawn 					= "stalkers\stalker_undying"
@@ -113,21 +153,23 @@ condition_sect 				= stalker_condition_undying
 critical_wound_threshold		= 5000.1
 critical_wound_decrease_quant		= 1
 
-[esc_wolf]:stalker_undying
+;;-- Warezz.K modded 28.04.2019 - 20:44 -- Added
+[esc_wolf]:stalker_immortal
 $spawn 					= "stalkers\esc_wolf"
 class					= esc_wolf
 
-[esc_fanat]:stalker_undying
+[esc_fanat]:stalker_immortal
 $spawn 					= "stalkers\esc_fanat"
 class					= esc_fanat
 
-[esc_fox]:stalker_undying
+[esc_fox]:stalker_immortal
 $spawn 					= "stalkers\esc_fox"
 class					= esc_fox
 
-[esc_tutorial_wounded]:stalker_undying
+[esc_tutorial_wounded]:stalker_immortal
 $spawn 					= "stalkers\esc_tutorial_wounded"
 class					= esc_tutorial_wounded
+;; -- Warezz.K END
 
 [esc_shustryi]:stalker_undying
 $spawn 					= "stalkers\esc_shustryi"
