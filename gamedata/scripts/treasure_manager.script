@@ -27,43 +27,43 @@ function on_npc_use( obj )
 	end
 end
 
------------------------------------------------------------------
+-- Warezz.K modded 01.05.2019 - 16:22 -- Modified
 function give_money(npc)
 	local deadmoney = npc:money()
 	if deadmoney < 1 then return end
 
 	local npc_rank = ranks.get_obj_rank_name(npc)
 	local novice_money = 10
-	local stalker_money = 250
-	local veteran_money = 300
-	local master_money = 550
+	local stalker_money = 100
+	local veteran_money = 175
+	local master_money = 225
 	if npc_rank then
-		if deadmoney > 10 and deadmoney <= 1000 then
+		if deadmoney > 10 and deadmoney <= 500 then
 			deadmoney = math.random(100, deadmoney)
-		elseif deadmoney > 1000 then
-			deadmoney = math.random(10, 1000)
+		elseif deadmoney > 500 then
+			deadmoney = math.random(10, 500)
 		else
 			local poor_man = npc:character_community() == "zombied"
-			if npc_rank == "novice" and deadmoney >= 400 then
+			if npc_rank == "novice" and deadmoney >= 250 then
 				if poor_man then
 					novice_money = 10
 				end
 				deadmoney = math.random(25, novice_money)	
-			elseif npc_rank == "experienced" and deadmoney >= 500 then
+			elseif npc_rank == "experienced" and deadmoney >= 350 then
 				if poor_man then
 					stalker_money = 125
 				end
 				deadmoney = math.random(50, stalker_money)  
-			elseif npc_rank == "veteran" and deadmoney >= 600 then
+			elseif npc_rank == "veteran" and deadmoney >= 450 then
 				if poor_man then
 					veteran_money = 150
 				end
-				deadmoney = math.random(100, veteran_money) 
-			elseif npc_rank == "master" and deadmoney >= 700 then
+				deadmoney = math.random(75, veteran_money) 
+			elseif npc_rank == "master" and deadmoney >= 600 then
 				if poor_man then
 					master_money = 200
 				end
-				deadmoney = math.random(175, master_money)  
+				deadmoney = math.random(125, master_money)  
 			end
 		end
 		--
@@ -71,10 +71,10 @@ function give_money(npc)
 		--
 		npc:give_money(-deadmoney)
 		--
-		db.actor:give_game_news("Найдены деньги: "..game.translate_string(deadmoney.." ".."руб."), "ui\\ui_iconsTotal", Frect():set(0,0,83,47), 0, 3000)
+		db.actor:give_game_news("RUBLES from dead body found: "..game.translate_string(deadmoney.." ".."RU."), "ui\\ui_iconsTotal", Frect():set(0,0,83,47), 0, 3000)
 	end
 end
------------------------------------------------------------------
+-- Warezz.K END
 
 local treasure_manager = nil
 
