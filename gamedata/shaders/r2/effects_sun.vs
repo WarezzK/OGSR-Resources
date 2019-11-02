@@ -1,29 +1,33 @@
 #include "common.h"
 
-struct	v_TL
+struct _in
 {
-	float4	P		: POSITION;
-	float2	Tex0	: TEXCOORD0;
-	float4	Color	: COLOR; 
+	float4 P	: POSITION;
+	float2 tc	: TEXCOORD0;
+	float4 c	: COLOR0;
+};
+struct _out
+{
+	float4 hpos	: POSITION;
+	float2 tc0	: TEXCOORD0;
+#ifdef FL_USE_DIRT
+	float4 tc1	: TEXCOORD1;
+#endif
+	float4 c0	: COLOR0;
 };
 
-struct	v2p_TL
+_out main (_in v)
 {
-	float2 	Tex0	: TEXCOORD0;
-	float4	Color	: COLOR;
-	float4 	HPos	: POSITION;	// Clip-space position 	(for rasterization)
-};
+	_out 		o;
 
-//////////////////////////////////////////////////////////////////////////////////////////
-// Vertex
-v2p_TL main ( v_TL I )
-{
-	v2p_TL O;
+	o.hpos 		= mul	(m_WVP, v.P);		// xform, input in world coords
+	o.tc0		= v.tc;				// copy tc
+	o.c0		= v.c;
 
-	O.HPos = mul(m_VP, I.P);
-	O.HPos.z = O.HPos.w;
-	O.Tex0 = I.Tex0;
-	O.Color = I.Color;
+#ifdef FL_USE_DIRT
+	o.tc1 = proj_to_screen(o.hpos);
+	o.tc1.xy /= o.tc1.w;
+#endif
 
- 	return O;
+	return o;
 }

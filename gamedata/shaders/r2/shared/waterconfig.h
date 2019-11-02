@@ -5,13 +5,23 @@
 //waterdistortion
 //waterdistortion2
 
-#define W_POSITION_SHIFT_HEIGHT (1.f/60.f)	//(1.f/100.f)	//amplitude /50 - small, /10 - large
-#define W_POSITION_SHIFT_SPEED	(25.f)		//(25.0f)
-#define W_DISTORT_BASE_TILE_0	(1.0f)		//(1.0f)
-#define W_DISTORT_BASE_TILE_1	(1.1f)		//(1.1f)
-#define W_DISTORT_AMP_0		(+0.15f)	//(+0.15f)
-#define W_DISTORT_AMP_1		(+0.55f)	//(-0.30f)
-#define W_DISTORT_POWER		(1.0f)		//(1.0f)
+#ifdef USE_PUDDLES
+	#define W_POSITION_SHIFT_HEIGHT (1.f/100.f)	//(1.f/100.f)	//amplitude /50 - small, /10 - large
+	#define W_POSITION_SHIFT_SPEED	(1.f)		//(25.0f)
+	#define W_DISTORT_BASE_TILE_0	(0.5f)		//(1.0f)
+	#define W_DISTORT_BASE_TILE_1	(0.6f)		//(1.1f)
+	#define W_DISTORT_AMP_0		(+0.05f)	//(+0.15f)
+	#define W_DISTORT_AMP_1		(+0.25f)	//(-0.30f)
+	#define W_DISTORT_POWER		(0.5f)		//(1.0f)
+#else
+	#define W_POSITION_SHIFT_HEIGHT (1.f/60.f)	//(1.f/100.f)	//amplitude /50 - small, /10 - large
+	#define W_POSITION_SHIFT_SPEED	(25.f)		//(25.0f)
+	#define W_DISTORT_BASE_TILE_0	(1.0f)		//(1.0f)
+	#define W_DISTORT_BASE_TILE_1	(1.1f)		//(1.1f)
+	#define W_DISTORT_AMP_0		(+0.15f)	//(+0.15f)
+	#define W_DISTORT_AMP_1		(+0.55f)	//(-0.30f)
+	#define W_DISTORT_POWER		(1.0f)		//(1.0f)
+#endif
 
 #endif
 

@@ -28,7 +28,7 @@ v_shadow_direct_aref 	main	( v_tree  	I )
 
 	O.hpos 	= mul		(m_VP,	f_pos	);
 	O.tc0 	= (I.tc * consts).xy;		//	+ result;
-#ifndef USE_HWSMAP
+#if defined(USE_PCSS) || !defined(USE_HWSMAP)
 	O.depth = O.hpos.z;
 #endif
  	return	O;

@@ -7,6 +7,7 @@ float4	watermove	(float4 P)	{
 			P.y	+= dh * W_POSITION_SHIFT_HEIGHT	;
 	return 	P	;
 }
+
 float2	watermove_tc	(float2 base, float2 P, float amp)	{
 	float2 	wave1	= 	float2	(0.2111f,0.2333f)*amp	;
 	float 	angle 	= 	timers.z + dot (P,wave1)	;
